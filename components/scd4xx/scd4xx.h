@@ -5,11 +5,11 @@
 #include "esphome/components/i2c/i2c.h"
 
 namespace esphome {
-namespace scd4x {
+namespace scd4xx {
 
 enum ERRORCODE { COMMUNICATION_FAILED, SERIAL_NUMBER_IDENTIFICATION_FAILED, MEASUREMENT_INIT_FAILED, UNKNOWN };
 
-class SCD4XComponent : public PollingComponent, public i2c::I2CDevice {
+class SCD4XXComponent : public PollingComponent, public i2c::I2CDevice {
  public:
   float get_setup_priority() const override { return setup_priority::DATA; }
   void setup() override;
@@ -50,5 +50,5 @@ class SCD4XComponent : public PollingComponent, public i2c::I2CDevice {
   sensor::Sensor *ambient_pressure_source_{nullptr};
 };
 
-}  // namespace scd4x
+}  // namespace scd4xx
 }  // namespace esphome

@@ -22,8 +22,8 @@ from esphome.const import (
 CODEOWNERS = ["@sjtrny"]
 DEPENDENCIES = ["i2c"]
 
-scd4x_ns = cg.esphome_ns.namespace("scd4x")
-SCD4XComponent = scd4x_ns.class_("SCD4XComponent", cg.PollingComponent, i2c.I2CDevice)
+scd4xx_ns = cg.esphome_ns.namespace("scd4xx")
+SCD4XXComponent = scd4xx_ns.class_("SCD4XXComponent", cg.PollingComponent, i2c.I2CDevice)
 
 CONF_AUTOMATIC_SELF_CALIBRATION = "automatic_self_calibration"
 CONF_ALTITUDE_COMPENSATION = "altitude_compensation"
@@ -34,7 +34,7 @@ CONF_AMBIENT_PRESSURE_COMPENSATION_SOURCE = "ambient_pressure_compensation_sourc
 CONFIG_SCHEMA = (
     cv.Schema(
         {
-            cv.GenerateID(): cv.declare_id(SCD4XComponent),
+            cv.GenerateID(): cv.declare_id(SCD4XXComponent),
             cv.Optional(CONF_CO2): sensor.sensor_schema(
                 unit_of_measurement=UNIT_PARTS_PER_MILLION,
                 icon=ICON_MOLECULE_CO2,
